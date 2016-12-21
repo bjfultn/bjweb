@@ -730,6 +730,54 @@
 					padding-top: 0;
 				}
 
+		ul.publications {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+			margin: 0;
+			padding 0;
+		}				
+			ul.publications h4 {
+				font-style: italic;
+			}
+
+			ul.publications li {
+				padding: 10px;
+				overflow: auto;
+			}
+
+				ul.publications li img {
+				float: left;
+				margin: 0 15px 0 0;
+				width: 20%;
+				}
+
+				ul.publications li b {
+				font-size: 1.10em;
+				font-style: bold;
+				}
+
+				ul.publications li p {
+				font-size: 0.70em;
+				overflow: hidden;
+				}
+								
+				ul.publications li dp {
+				font-size: 1.10em;
+				}
+
+				ul.publications li journal {
+				font-size: 1.10em;
+				font-style: bold;
+				}
+
+
+				ul.publications li:hover {
+				background-color: rgba(255, 255, 255, 0.075);
+				cursor: pointer;
+				}
+
+
 		ul.icons {
 			cursor: default;
 			list-style: none;
