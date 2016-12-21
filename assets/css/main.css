@@ -116,6 +116,10 @@
 			html {
 				font-size: 12pt;
 			}
+			
+			h1 {
+			width: 100%;
+			}
 
 		}
 
@@ -174,9 +178,6 @@
 			width: -moz-max-content;
 			width: -ms-max-content;
 			width: max-content;
-/* 
-			width: 100%;
- */
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
 			overflow: auto;
