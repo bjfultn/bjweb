@@ -2,7 +2,7 @@
 // Anything that reaches a mail header must be one line. A CR or LF would let a
 // visitor add headers of their own, such as a Bcc that relays mail through us.
 function one_line($s) {
-	return is_string($s) ? trim(str_replace(array("\r", "\n"), '', $s)) : '';
+	return is_string($s) ? trim(str_replace(array("\r", "\n", "\0"), '', $s)) : '';
 }
 
 function back($text, $to) { ?>
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $field_name = one_line($_POST['name'] ?? '');
 $field_email = one_line($_POST['email'] ?? '');
-$field_message = is_string($_POST['message'] ?? null) ? trim($_POST['message']) : '';
+$field_message = is_string($_POST['message'] ?? null) ? trim(str_replace("\0", '', $_POST['message'])) : '';
 
 if ($field_name === '' || $field_message === '' || !filter_var($field_email, FILTER_VALIDATE_EMAIL)) {
 	back('Please fill in your name, a valid e-mail address and a message.', 'index.html#contact');
